@@ -23,9 +23,9 @@ static defaultProps = {
           {this.props.children}
         </div>
         <div className={styles.columns}>
-          <Column title={'Title 1'} />
-          <Column title={'Title 2'} />
-          <Column title={'Title 3'} />
+          <Column title={this.props.titleColumn1} />
+          <Column title={this.props.titleColumn2} />
+          <Column title={this.props.titleColumn3} />
         </div>
       </section>
     )
