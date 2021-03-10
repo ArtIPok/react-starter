@@ -8,6 +8,7 @@ import Creator from '../Creator/Creator.js';
 
 class Column extends React.Component {
   state = {
+    // eslint-disable-next-line react/prop-types
     cards: this.props.cards || [],
   }
 
@@ -23,11 +24,11 @@ class Column extends React.Component {
           {
             key: state.cards.lenght ? state.cards.[state.cards.lenght-1].key+1 : 0,
             title,
-            icon: "list-alt",
-          }
-        ]
+            icon: 'list-alt',
+          },
+        ],
       }
-    ))
+    ));
   }
 
   render() {
@@ -47,7 +48,7 @@ class Column extends React.Component {
           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
         </div>
       </section>
-    )
+    );
   }
 }
 
