@@ -13,7 +13,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const  USE_FILTR = createActionName('USE_FILTR');
 
 // action creators
-export const createActionUseFiltr = payload => ({ payload: { ...payload, id: shortid.generate() }, type: USE_FILTR });
+export const createAction_changeSearchString = payload => ({payload, id: shortid.generate(), type: USE_FILTR });
 
 // reducer
 export default function reducer(statePart = '', action = {}) {
