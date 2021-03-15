@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './App.scss';
 import PropTypes from 'prop-types';
 import List from '../List/ListContainer.js';
-import Search from '../Search/SearchContainer.js';
+import Search from '../Search/SearchContainer';
 // import {pageContents, listData} from '../../data/dataStore';
 
 class App extends React.Component {
