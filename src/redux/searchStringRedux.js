@@ -19,7 +19,7 @@ export const createAction_changeSearchString = payload => ({payload, id: shortid
 export default function reducer(statePart = '', action = {}) {
   switch (action.type) {
     case USE_FILTR:
-      return (action.payload);
+      return action.payload;
     default:
       return statePart;
   }
