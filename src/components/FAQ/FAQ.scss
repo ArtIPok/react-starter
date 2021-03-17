@@ -1,0 +1,12 @@
+@import '../../styles/settings.scss';
+
+.titlePage {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  font-size: ($base-size * 2.5);
+  text-transform: uppercase;
+  color: #1fcc74;
+  transform: translate(-50%,-50%);
+}

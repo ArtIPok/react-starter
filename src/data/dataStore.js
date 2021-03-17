@@ -10,6 +10,21 @@ export const settings = {
     defaultText: 'Search...',
     icon: 'search',
   },
+  header: {
+    iconName: 'horse',
+  },
+  info: {
+    titlePage: 'Info',
+    image: 'https://i.postimg.cc/SszTVtXP/pexels-sevenstorm-juhaszimrus-704767-1.jpg',
+    titleImage: 'everything you need',
+    contentPage: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+  faq: {
+    titlePage: 'FAQ',
+    image: 'https://i.postimg.cc/RC8N5Jnz/pexels-pixabay-221164.jpg',
+    titleImage: 'everything you need',
+    contentPage: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
 };
