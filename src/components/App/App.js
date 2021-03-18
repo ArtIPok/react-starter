@@ -7,6 +7,7 @@ import Info from '../Info/Info';
 import FAQ from '../FAQ/FAQ';
 import MainLayout from '../MainLayout/MainLayout';
 import List from '../List/ListContainer';
+import Search from '../Search/Search';
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path='/info' component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
         <Route excat path='/list/:id' component={List} />
+        <Route expect path='/search/' component={Search} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>

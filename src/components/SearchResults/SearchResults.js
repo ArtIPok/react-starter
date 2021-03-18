@@ -7,7 +7,7 @@ import { settings } from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import {Droppable} from 'react-beautiful-dnd';
 
-class Column extends React.Component {
+class SearchResults extends React.Component {
   state = {
     cards: this.props.cards || [],
   }
@@ -57,4 +57,4 @@ class Column extends React.Component {
   }
 }
 
-export default Column;
+export default SearchResults;
