@@ -16,7 +16,9 @@ class FAQ extends React.Component {
   
       return (
         <Container>
-          <h2>{titlePage}</h2>
+          <div className={titlePage}>
+            <h2>{titlePage}</h2>
+          </div>
           <Hero titleText={titleImage} img={image}/>
           <p>{contentPage}</p>
         </Container>

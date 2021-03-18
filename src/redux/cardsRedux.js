@@ -13,7 +13,7 @@ export const MOVE_CARD = createActionName('MOVE_CARD');
 
 // action creators
 export const createActionAddCard = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_CARD });
-export const createAction_moveCard = payload => ({ payload: { ...payload, id: shortid.generate() }, type: MOVE_CARD });
+export const createAction_moveCard = payload => ({ payload: { ...payload }, type: MOVE_CARD });
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
