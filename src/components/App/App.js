@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {AnimatedSwitch} from 'react-router-transition';
-import styles from './App.scss'
+import styles from './App.scss';
 import Home from '../Home/HomeContainer';
 import Info from '../Info/Info';
 import FAQ from '../FAQ/FAQ';
 import MainLayout from '../MainLayout/MainLayout';
 import List from '../List/ListContainer';
-import Search from '../Search/Search';
+import SearchResaults from '../SearchResults/SearchResults';
 
 const App = () => (
   <BrowserRouter>
@@ -22,7 +22,7 @@ const App = () => (
         <Route exact path='/info' component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
         <Route excat path='/list/:id' component={List} />
-        <Route expect path='/search/' component={Search} />
+        <Route expect path='/search/:sarchResaults' component={SearchResaults} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
