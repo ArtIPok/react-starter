@@ -10,24 +10,35 @@ import Creator from '../Creator/Creator.js';
 import Container from '../Container/Container';
 import { DragDropContext } from 'react-beautiful-dnd';
 
-class List extends React.Component {
-  static propTypes = {
-    title: PropTypes.node,
-    img: PropTypes.string,
-    description: PropTypes.node,
-    columns: PropTypes.array,
-    addColumn: PropTypes.func,
-    moveCard: PropTypes.func,
-  }
+const List = props => {
+  const { title, image, description, columns, addColumn, moveCard } = props;
 
-  static defaultProps = {
-    description: settings.defaultListDescription,
-  }
+  const moveCardHandler = result => {
+    if(
+      result.destination
+      &&
+      (
+        result.destination.index != result.source.index
+        ||
+        result.destination.droppableId != result.source.droppableId
+      )
+    ){
+      moveCard({
+        id: result.draggableId,
+        dest: {
+          index: result.destination.index,
+          columnId: result.destination.droppableId,
+        },
+        src: {
+          index: result.source.index,
+          columnId: result.source.droppableId,
+        },
+      });
+    }
+  };
 
-  render() {
-    const { title, image, description, columns, addColumn } = this.props;
-
-    return (
+  return (
+    <DragDropContext onDragEnd={moveCardHandler}>
       <Container>
         <section className={styles.component}>
           <Hero titleText={title} img={image}/>
@@ -44,8 +55,22 @@ class List extends React.Component {
           </div>
         </section>
       </Container>
-    );
-  }
-}
+    </DragDropContext>
+  );
+};
+
+
+List.propTypes = {
+  title: PropTypes.node,
+  img: PropTypes.string,
+  description: PropTypes.node,
+  columns: PropTypes.array,
+  addColumn: PropTypes.func,
+  moveCard: PropTypes.func,
+};
+
+List.defaultProps = {
+  description: settings.defaultListDescription,
+};
 
 export default List;

@@ -13,9 +13,9 @@ const App = () => (
   <BrowserRouter>
     <MainLayout>
       <AnimatedSwitch
-        atEnter={{ opacity: 0 }}
+        atEnter={{ opacity: 0, marginTop: 200 }}
         atLeave={{ opacity: 0 }}
-        atActive={{ opacity: 1 }}
+        atActive={{ opacity: 1, marginTop: 0 }}
         className={styles.switchWrapper}
       >
         <Route exact path='/' component={Home} />

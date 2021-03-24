@@ -7,54 +7,43 @@ import { settings } from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import {Droppable} from 'react-beautiful-dnd';
 
-class Column extends React.Component {
-  state = {
-    cards: this.props.cards || [],
-  }
+const Column = props => {
+  const { title, icon, cards, addCard, id } = props;
 
-  static propTypes = {
-    title: PropTypes.node,
-    icon: PropTypes.string,
-    cards: PropTypes.array,
-    addCard: PropTypes.func,
-    id: PropTypes.string,
-  }
+  return (
+    <section className={styles.component}>
+      <h3 className={styles.title}>{ title }
+        <span className={styles.icon}>
+          <Icon name={ icon } className={styles.icon} />
+        </span>
+      </h3>
+      <Droppable droppableId={id}>
+        {provided => (
+          <div
+            className={styles.cards}
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+          >
+            {cards.map(cardData => (
+              <Card key={cardData.id} {...cardData} />
+            ))}
 
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
-  }
-
-  render() {
-    const { title, icon, cards, addCard, id } = this.props;
-
-    return (
-      <section className={styles.component}>
-        <h3 className={styles.title}>{ title }
-          <span className={styles.icon}>
-            <Icon name={ icon } className={styles.icon} />
-          </span>
-        </h3>
-        <Droppable droppableId={id}>
-          {provided => (
-            <div 
-              className={styles.cards}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {cards.map(cardData => (
-                <Card key={cardData.id} {...cardData} />
-              ))}
-
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-        <div className={styles.creator}> 
-          <Creator text={settings.cardCreatorText} action={ addCard } />
-        </div>
-      </section>
-    );
-  }
-}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+      <div className={styles.creator}> 
+        <Creator text={settings.cardCreatorText} action={ addCard } />
+      </div>
+    </section>
+  );
+};
+Column.propTypes = {
+  title: PropTypes.node,
+  icon: PropTypes.string,
+  cards: PropTypes.array,
+  addCard: PropTypes.func,
+  id: PropTypes.string,
+};
 
 export default Column;

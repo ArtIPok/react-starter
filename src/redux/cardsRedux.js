@@ -21,7 +21,7 @@ export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_CARD:
       return [...statePart, action.payload];
-      /* case MOVE_CARD: {
+    case MOVE_CARD: {
       const {id, src, dest} = action.payload;
       const targetCard = statePart.filter(card => card.id == id)[0];
       const targetColumnCards = statePart.filter(card => card.columnId == dest.columnId).sort((a, b) => a.index - b.index);
@@ -74,7 +74,7 @@ export default function reducer(statePart = [], action = {}) {
           }
         });
       }
-    } */
+    }
 
     default:
       return statePart;

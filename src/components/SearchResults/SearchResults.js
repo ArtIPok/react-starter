@@ -34,7 +34,7 @@ class SearchResults extends React.Component {
             <Icon name={ icon } className={styles.icon} />
           </span>
         </h3>
-        <Droppable droppableId={id}>
+        {/* <Droppable droppableId={id}> */}
           {provided => (
             <div 
               className={styles.cards}
@@ -48,7 +48,7 @@ class SearchResults extends React.Component {
               {provided.placeholder}
             </div>
           )}
-        </Droppable>
+        {/* </Droppable> */}
         <div className={styles.creator}> 
           <Creator text={settings.cardCreatorText} action={ addCard } />
         </div>
