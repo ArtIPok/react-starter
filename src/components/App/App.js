@@ -7,7 +7,7 @@ import Info from '../Info/Info';
 import FAQ from '../FAQ/FAQ';
 import MainLayout from '../MainLayout/MainLayout';
 import List from '../List/ListContainer';
-import SearchResaults from '../SearchResults/SearchResults';
+import SearchResults from '../SearchResults/SearchResultsContainer';
 
 const App = () => (
   <BrowserRouter>
@@ -22,7 +22,7 @@ const App = () => (
         <Route exact path='/info' component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
         <Route excat path='/list/:id' component={List} />
-        <Route expect path='/search/:sarchResaults' component={SearchResaults} />
+        <Route expect path='/search/:SearchResaults' component={SearchResults} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>

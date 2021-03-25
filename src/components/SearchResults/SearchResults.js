@@ -19,7 +19,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.changeSearchString(this.props.match.params.SearchResults);
+    this.props.changeSearchString(this.props.match.params.SearchResults);
   }
 
   render() {
@@ -28,7 +28,7 @@ class SearchResults extends React.Component {
     return (
       <Container >
         <h1>Search Resault:</h1>
-        {/* {this.props.cards.map(card => <p key={card.id} {...card}></p>)} */}
+        {this.props.cards.map(card => <p key={card.id} {...card}></p>)}
       </Container>
     );
   }
