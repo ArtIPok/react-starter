@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from '../Container/Container';
+import CardIner from '../Card/CardIner';
 // import Card from '../Card/Card';
 // import Icon from '../Icon/Icon';
 // import { settings } from '../../data/dataStore';
@@ -9,26 +10,22 @@ import Container from '../Container/Container';
 
 class SearchResults extends React.Component {
   state = {
-    cards: this.props.cards || [],
-
+    stateSearch: this.props.changeSearchString(this.props.match.params.SearchResaults),
   }
 
   static propTypes = {
     cards: PropTypes.array,
     changeSearchString: PropTypes.func,
-  }
-
-  componentDidMount(){
-    this.props.changeSearchString(this.props.match.params.SearchResults);
+    match: PropTypes.object,
   }
 
   render() {
-    // const { cards } = this.props;
+    const { cards } = this.props;
 
     return (
       <Container >
         <h1>Search Resault:</h1>
-        {this.props.cards.map(card => <p key={card.id} {...card}></p>)}
+        {cards.map(cardData => <CardIner key={cardData.id} {...cardData} />)}
       </Container>
     );
   }

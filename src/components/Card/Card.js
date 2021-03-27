@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './Card.scss';
 import PropTypes from 'prop-types';
 import { Draggable } from 'react-beautiful-dnd';
+
+import CardIner from './CardIner';
 
 const Card = props => {
   const { title, index, id } = props;
@@ -9,14 +10,12 @@ const Card = props => {
   return (
     <Draggable draggableId={id} index={index} >
       {provided => (
-        <article
-          className={styles.component}
+        <CardIner title={title}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          {title}
-        </article>
+        </CardIner>
       )}
     </Draggable>
   );
