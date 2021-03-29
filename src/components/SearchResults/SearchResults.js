@@ -19,6 +19,14 @@ class SearchResults extends React.Component {
     match: PropTypes.object,
   }
 
+  componentDidMount(){
+    this.props.changeSearchString(this.props.match.params.SearchResaults);
+  }
+
+  componentDidUpdate(){
+    this.props.changeSearchString(this.props.match.params.SearchResaults);
+  }
+
   render() {
     const { cards } = this.props;
 
